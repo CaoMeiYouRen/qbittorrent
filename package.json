@@ -1,10 +1,14 @@
 {
-  "name": "@ctrl/qbittorrent",
+  "name": "@cao-mei-you-ren/qbittorrent",
   "version": "0.0.0-placeholder",
   "description": "TypeScript api wrapper for qbittorrent using got",
-  "author": "Scott Cooper <scttcper@gmail.com>",
+  "author": "CaoMeiYouRen",
+  "contributors": [
+    "Scott Cooper <scttcper@gmail.com>",
+    "CaoMeiYouRen"
+  ],
   "license": "MIT",
-  "repository": "scttcper/qbittorrent",
+  "repository": "https://github.com/CaoMeiYouRen/qbittorrent",
   "homepage": "https://qbittorrent.vercel.app",
   "type": "module",
   "main": "./dist/index.cjs",
