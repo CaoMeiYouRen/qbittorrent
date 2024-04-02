@@ -77,5 +77,10 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "pnpm": {
+    "overrides": {
+      "crypto-hash": "github:CaoMeiYouRen/crypto-hash"
+    }
   }
 }
