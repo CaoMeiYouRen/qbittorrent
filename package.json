@@ -80,7 +80,7 @@
   },
   "pnpm": {
     "overrides": {
-      "crypto-hash": "github:CaoMeiYouRen/crypto-hash"
+      "crypto-hash": "CaoMeiYouRen/crypto-hash"
     }
   }
 }
