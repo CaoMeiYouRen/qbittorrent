@@ -20,6 +20,7 @@ import type {
   AddMagnetOptions,
   AddTorrentOptions,
   BuildInfo,
+  MainData,
   Preferences,
   Torrent,
   TorrentCategories,
@@ -131,6 +132,14 @@ export class QBittorrent implements TorrentClient {
       }),
     );
     return true;
+  }
+
+  /**
+ * {@link https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-main-data}
+ */
+  async getMainData(rid?: number) {
+    const res = await this.request<MainData>('/sync/maindata', 'GET', { rid });
+    return res;
   }
 
   /**
@@ -769,7 +778,7 @@ export class QBittorrent implements TorrentClient {
       : maxAge
         ? new Date(Number(maxAge) * 1000)
         : // Default expiration 1 hour
-          new Date(Date.now() + 3600000);
+        new Date(Date.now() + 3600000);
     return true;
   }
 
