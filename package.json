@@ -1,6 +1,6 @@
 {
   "name": "@cao-mei-you-ren/qbittorrent",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "TypeScript api wrapper for qbittorrent using got",
   "author": "CaoMeiYouRen",
   "contributors": [
