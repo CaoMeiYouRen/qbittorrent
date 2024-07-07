@@ -13,7 +13,7 @@ import type {
   TorrentClient,
   TorrentSettings,
 } from '@ctrl/shared-torrent';
-import { hash } from '@ctrl/torrent-file';
+import { hash } from '@cao-mei-you-ren/torrent-file';
 
 import { normalizeTorrentData } from './normalizeTorrentData.js';
 import type {

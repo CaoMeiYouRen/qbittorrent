@@ -4,22 +4,19 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  crypto-hash: git+https://github.com/CaoMeiYouRen/crypto-hash.git
-
 importers:
 
   .:
     dependencies:
+      '@cao-mei-you-ren/torrent-file':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@ctrl/magnet-link':
         specifier: ^4.0.1
         version: 4.0.2
       '@ctrl/shared-torrent':
         specifier: ^6.0.0
         version: 6.0.0
-      '@ctrl/torrent-file':
-        specifier: ^4.0.0
-        version: 4.0.0
       cookie:
         specifier: ^0.6.0
         version: 0.6.0
@@ -157,6 +154,14 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@cao-mei-you-ren/crypto-hash@3.0.0':
+    resolution: {integrity: sha512-wUGqtwFA6uqhwJvHY134ZreQ9eUQBc2h1qsWrCYu54SHEn5F9INTiodGzS+XLCtk8oB8HidZriEt6sz5geVkiw==}
+    engines: {node: '>=18'}
+
+  '@cao-mei-you-ren/torrent-file@1.0.0':
+    resolution: {integrity: sha512-UPSrDHEWA26oz4HGOneGWdOxLnZ3WAvzQECC1LWbiuLYed1E9mgGijrQT0HS+MzhmzUHwZ3FhEgrU7PC7kTXCA==}
+    engines: {node: '>=18'}
+
   '@ctrl/eslint-config-biome@2.1.1':
     resolution: {integrity: sha512-7GbEtpIZ54/HEgHFMEJQJrbRVs+MHQL5uA+U/FEjCdKXICe2D2dvNy7MOdSgX5+5uBFEvP00O4mxCUuMnXxyBg==}
 
@@ -166,10 +171,6 @@ packages:
 
   '@ctrl/shared-torrent@6.0.0':
     resolution: {integrity: sha512-BZAPDv8syFArFTAAeb560JSBNTajFtP3G/5eYiUMsg0upGAQs6NWGiHYbyjvAt8uHCSzxXsiji/Wvq1b7CvXSQ==}
-    engines: {node: '>=18'}
-
-  '@ctrl/torrent-file@4.0.0':
-    resolution: {integrity: sha512-FmecYRCzpuPqAQhe/M1hHU81j+HjSzagEJJSQcJfdqc0cHVqNt7emo7YiJP3oOoVjq256vH4+ZimGErwFNvRpQ==}
     engines: {node: '>=18'}
 
   '@esbuild/aix-ppc64@0.19.12':
@@ -841,11 +842,6 @@ packages:
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
-
-  crypto-hash@https://codeload.github.com/CaoMeiYouRen/crypto-hash/tar.gz/cbe97d052b7da4eaf3fa774ac2fae4ad225aa118:
-    resolution: {tarball: https://codeload.github.com/CaoMeiYouRen/crypto-hash/tar.gz/cbe97d052b7da4eaf3fa774ac2fae4ad225aa118}
-    version: 3.0.0
-    engines: {node: '>=18'}
 
   debug@4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
@@ -1808,6 +1804,13 @@ snapshots:
   '@biomejs/cli-win32-x64@1.6.0':
     optional: true
 
+  '@cao-mei-you-ren/crypto-hash@3.0.0': {}
+
+  '@cao-mei-you-ren/torrent-file@1.0.0':
+    dependencies:
+      '@cao-mei-you-ren/crypto-hash': 3.0.0
+      uint8array-extras: 1.1.0
+
   '@ctrl/eslint-config-biome@2.1.1(typescript@5.4.2)':
     dependencies:
       '@typescript-eslint/eslint-plugin': 7.5.0(@typescript-eslint/parser@7.5.0(eslint@8.57.0)(typescript@5.4.2))(eslint@8.57.0)(typescript@5.4.2)
@@ -1826,11 +1829,6 @@ snapshots:
       uint8array-extras: 1.1.0
 
   '@ctrl/shared-torrent@6.0.0': {}
-
-  '@ctrl/torrent-file@4.0.0':
-    dependencies:
-      crypto-hash: https://codeload.github.com/CaoMeiYouRen/crypto-hash/tar.gz/cbe97d052b7da4eaf3fa774ac2fae4ad225aa118
-      uint8array-extras: 1.1.0
 
   '@esbuild/aix-ppc64@0.19.12':
     optional: true
@@ -2371,8 +2369,6 @@ snapshots:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
-
-  crypto-hash@https://codeload.github.com/CaoMeiYouRen/crypto-hash/tar.gz/cbe97d052b7da4eaf3fa774ac2fae4ad225aa118: {}
 
   debug@4.3.4:
     dependencies:
